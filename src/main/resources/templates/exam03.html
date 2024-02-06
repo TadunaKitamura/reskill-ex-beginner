@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品の合計金額入力画面</title>
+</head>
+<body>
+    <form action="exam03-result.html" th:action="@{/ex03/input-item}" method="post">
+     商品１：<input type="text" name="item1"><br>
+     商品１：<input type="text" name="item2"><br>
+     商品１：<input type="text" name="item3"><br>
+    <button>購入</button>
+</form>
+
+</body>
+</html>
