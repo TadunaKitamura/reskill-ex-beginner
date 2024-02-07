@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>検索結果画面</title>
+  </head>
+  <body>
+
+    <p th:if="${memberList == null}">検索結果が見つかりませんでした。</p>
+    <ul th:if="${memberList != null}">
+      <li th:each="member : ${memberList}">名前: <span th:text="${member.getName()}"></span></li>
+    </ul>
+
+  </body>
+</html>
