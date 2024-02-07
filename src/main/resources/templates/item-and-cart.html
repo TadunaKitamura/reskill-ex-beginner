@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品購入画面</title>
+  </head>
+  <body>
+
+    <!-- <form
+      action="exam05-result.html"
+      th:action="@{/ex05/search}"
+      method="post"
+    >
+    <h1>商品一覧</h1>
+    <div>手帳ノート　1000円<input type="text" name="name"/><button>カートへ</button></div>
+    <div>手帳ノート　1000円<input type="text" name="name"/><button>カートへ</button></div>
+    <div>手帳ノート　1000円<input type="text" name="name"/><button>カートへ</button></div>
+    <br>
+    <h1>ショッピングカート</h1>
+    <div>文房具セット　1500円<input type="text" name="name"/><button>削除</button></div>
+    <div>ファイル　2000円<input type="text" name="name"/><button>削除</button></div>
+
+    <br>
+    <h2>合計金額</h2>
+    <div></div>
+    </form> -->
+
+    <!-- <h1>商品一覧</h1>
+<ul>
+  <li th:each="item : ${itemList}">
+    <p th:text="${item.name}"></p>
+    <p th:text="${item.price}"></p><p>円</p>
+    <form th:action="@{/inCart}" th:method="post">
+      <input type="hidden" name="id" th:value="${item.id}">
+      <button type="submit">カートへ</button>
+    </form>
+  </li>
+</ul>
+
+<h1>ショッピングカート</h1>
+<ul>
+  <li th:each="item : ${cartList}">
+    <p th:text="${item.name}"></p>
+    <p th:text="${item.price}"></p><p>円</p>
+    <form th:action="@{/delete}" th:method="post">
+      <input type="hidden" name="id" th:value="${item.id}">
+      <button type="submit">削除</button>
+    </form>
+  </li>
+</ul>
+
+<p th:if="${cartList.isEmpty()}">カートは空です</p>
+
+<p>合計金額：<span th:text="${totalPrice}"></span></p><p>円</p> -->
+<h1>商品一覧</h1>
+<ul>
+  <li th:each="item : ${itemList}">
+    <p th:text="${item.name}"></p>
+    <p th:text="${item.price}"></p><p>円</p>
+    <form th:action="@{/shopping/inCart}" th:method="post">
+      <input type="hidden" name="name" th:value="${item.name}">
+      <button type="submit">カートへ</button>
+    </form>
+  </li>
+</ul>
+
+<h1>ショッピングカート</h1>
+<ul>
+  <li th:each="item : ${cartList}">
+    <p th:text="${item.name}"></p>
+    <p th:text="${item.price}"></p><p>円</p>
+    <form th:action="@{/shopping/delete}" th:method="post">
+      <input type="hidden" name="name" th:value="${item.name}">
+      <button type="submit">削除</button>
+    </form>
+  </li>
+</ul>
+
+<p th:if="${cartList.isEmpty()}">カートは空です</p>
+
+<p>合計金額：<span th:text="${totalPrice}"></span></p><p>円</p>
+  </body>
+</html>
+
